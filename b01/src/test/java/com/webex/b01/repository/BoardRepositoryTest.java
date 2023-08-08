@@ -1,6 +1,7 @@
 package com.webex.b01.repository;
 
 import com.webex.b01.domain.Board;
+import com.webex.b01.dto.BoardDTO;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -120,6 +121,8 @@ class BoardRepositoryTest {
 
         result.getContent().forEach(board -> log.info(board));
     }
+
+
 
 
 }
