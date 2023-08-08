@@ -1,2 +1,4 @@
 
 b01/src/main/resources/application.properties
+b01/src/main/resources/static/css/styles.css
+b01/src/main/resources/static/index.html
