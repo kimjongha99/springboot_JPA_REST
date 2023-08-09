@@ -21,8 +21,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Log4j2
-public class ReplyServiceImpl  implements  ReplyService{
-
+public class ReplyServiceImpl implements ReplyService{
 
     private final ReplyRepository replyRepository;
 
@@ -37,7 +36,6 @@ public class ReplyServiceImpl  implements  ReplyService{
 
         return rno;
     }
-
 
     @Override
     public ReplyDTO read(Long rno) {
