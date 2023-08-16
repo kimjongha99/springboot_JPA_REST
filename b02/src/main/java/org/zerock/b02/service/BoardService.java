@@ -3,6 +3,9 @@ package org.zerock.b02.service;
 import org.zerock.b02.domain.Board;
 import org.zerock.b02.dto.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public interface BoardService {
 
     Long register(BoardDTO boardDTO);
@@ -19,7 +22,7 @@ public interface BoardService {
     PageResponseDTO<BoardListReplyCountDTO> listWithReplyCount(PageRequestDTO pageRequestDTO);
 //이미지 의 댓글의 숫차까지 처리 )게시글
 
-    PageResponseDTO<BoardListAllDTO> listWithAll(PageResponseDTO pageResponseDTO);
+    PageResponseDTO<BoardListAllDTO> listWithAll(PageRequestDTO pageRequestDTO);
 
 
 
@@ -41,6 +44,26 @@ public interface BoardService {
         }
         return board;
     }
+    default BoardDTO entityToDTO(Board board) {
+
+        BoardDTO boardDTO = BoardDTO.builder()
+                .bno(board.getBno())
+                .title(board.getTitle())
+                .content(board.getContent())
+                .writer(board.getWriter())
+                .regDate(board.getRegDate())
+                .modDate(board.getModDate())
+                .build();
+
+        List<String> fileNames =
+                board.getImageSet().stream().sorted().map(boardImage ->
+                        boardImage.getUuid()+"_"+boardImage.getFileName()).collect(Collectors.toList());
+
+        boardDTO.setFileNames(fileNames);
+
+        return boardDTO;
+    }
+
 
 
 }
