@@ -9,3 +9,4 @@ spring_security/src/main/resources/application.properties
 spring_security/src/test/java/org/zerock/b03/repository/MemberRepositoryTest.java
 boot_jsp/src/main/resources/application.properties
 spring_security/src/main/resources/application.properties
+api01/src/main/resources/application.properties
