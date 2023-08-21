@@ -35,3 +35,4 @@ out/
 
 ### VS Code ###
 .vscode/
+api01/src/main/resources/application.properties
